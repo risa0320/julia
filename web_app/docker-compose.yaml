@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web_app:
+    container_name: web_app
+    build: .
+    environment:
+      TZ: 'Asia/Tokyo'
+    ports:
+     - 8000:8000
+    volumes:  
+     - ./:/julia_app
+    working_dir: /julia_app
+    command: julia start_app.jl   
